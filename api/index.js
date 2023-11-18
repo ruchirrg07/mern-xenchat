@@ -24,10 +24,10 @@ app.use(cors({
     credentials: true,
     origin: process.env.CLIENT_URL,
 }));
-app.use(express.static("../client/build"));
-app.get("*", (req,res) => {
-    res.sendFile(path.resolve(__dirname,"client","build","index.html"));
-});
+// app.use(express.static("../client/build"));
+// app.get("*", (req,res) => {
+//     res.sendFile(path.resolve(__dirname,"client","build","index.html"));
+// });
 
 async function getUserDataFromRequest(req) {
     return new Promise((resolve, reject) => {
