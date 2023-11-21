@@ -9,7 +9,6 @@ const User = require('./models/User');
 const Message = require('./models/Message');
 const ws = require('ws');
 const fs = require('fs');
-const path = require('path');
 
 dotenv.config();
 mongoose.connect(process.env.MONGO_URL);
@@ -24,10 +23,6 @@ app.use(cors({
     credentials: true,
     origin: process.env.CLIENT_URL,
 }));
-// app.use(express.static("../client/build"));
-// app.get("*", (req,res) => {
-//     res.sendFile(path.resolve(__dirname,"client","build","index.html"));
-// });
 
 async function getUserDataFromRequest(req) {
     return new Promise((resolve, reject) => {
